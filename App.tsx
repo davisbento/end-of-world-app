@@ -1,23 +1,21 @@
 import React from 'react';
-import { SafeAreaView, ScrollView, StatusBar } from 'react-native';
+import { SafeAreaView, StatusBar } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
 
-import Home from './src/pages/Home';
+import StackNavigator from './src/navigators/Stack';
 
 const App = () => {
   const backgroundStyle = {
-    backgroundColor: '#000',
     flex: 1,
   };
 
   return (
-    <SafeAreaView style={backgroundStyle}>
-      <StatusBar barStyle="dark-content" />
-      <ScrollView
-        contentInsetAdjustmentBehavior="automatic"
-        style={backgroundStyle}>
-        <Home />
-      </ScrollView>
-    </SafeAreaView>
+    <NavigationContainer>
+      <SafeAreaView style={backgroundStyle}>
+        <StatusBar barStyle="dark-content" />
+        <StackNavigator />
+      </SafeAreaView>
+    </NavigationContainer>
   );
 };
 
